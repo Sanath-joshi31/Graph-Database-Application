@@ -95,15 +95,13 @@ The graph model uses 6 node labels and 6 typed relationships:
 
 ```mermaid
 graph TD
-    User[(:User)] -->|HAS_SKILL| Skill[(:Skill)]
-    Role[(:Role)] -->|REQUIRES| Skill
-    Skill -->|REQUIRES (1..4 Hops)| SkillPrereq[(:Skill Prerequisite)]
-    Resource[(:Resource)] -->|TEACHES| Skill
-    Project[(:Project)] -->|PRACTICES| Skill
-    Skill -->|BELONGS_TO| Category[(:Category)]
+    User[User] -->|HAS_SKILL| Skill[Skill]
+    Role[Role] -->|REQUIRES| Skill
+    Skill -->|REQUIRES 1 to 4 Hops| SkillPrereq[Skill Prerequisite]
+    Resource[Resource] -->|TEACHES| Skill
+    Project[Project] -->|PRACTICES| Skill
+    Skill -->|BELONGS_TO| Category[Category]
 ```
-
----
 
 ## 5. Key Cypher Queries
 
